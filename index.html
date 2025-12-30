@@ -3,57 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Malkia Vumilia Kajela | 2026</title>
+    <title>Malkia Vumilia Kajela | Birthday & New Year 2026 Double Celebration</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@200;400;600;800&display=swap" rel="stylesheet">
-    
+   
     <style>
         :root { --gold: #bf953f; --light-gold: #fcf6ba; --deep-gold: #aa771c; }
         body { font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; background: #000; overflow-x: hidden; color: white; }
         .serif { font-family: 'Playfair Display', serif; }
-        
-        /* ANIMATION ENGINE */
+       
         .festival-particle {
             position: fixed; top: -50px; user-select: none; pointer-events: none; z-index: 50;
             animation: fall linear forwards;
         }
         @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
-            100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+            100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
         }
 
         .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
-        .star { position: absolute; background: white; border-radius: 50%; animation: twinkle 3s infinite; }
-        @keyframes twinkle { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
+        .star { position: absolute; background: white; border-radius: 50%; animation: twinkle 4s infinite; }
+        @keyframes twinkle { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
 
         .gold-gradient {
             background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #aa771c);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            background-size: 300% auto; animation: shine 5s linear infinite;
+            background-size: 300% auto; animation: shine 6s linear infinite;
         }
         @keyframes shine { to { background-position: 300% center; } }
 
-        .glass { background: rgba(15, 15, 15, 0.7); backdrop-filter: blur(25px); border: 1px solid rgba(191, 149, 63, 0.2); }
-        .floating { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .glass { background: rgba(15, 15, 15, 0.75); backdrop-filter: blur(28px); border: 1px solid rgba(191, 149, 63, 0.25); }
+        .floating { animation: float 7s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-25px); } }
 
         .scene-indicator {
             position: fixed; top: 20px; left: 20px; z-index: 100;
-            background: rgba(0,0,0,0.6); padding: 8px 15px; border-radius: 20px;
-            font-size: 10px; border: 1px solid rgba(191, 149, 63, 0.3); color: #fbbf24;
-            text-transform: uppercase; letter-spacing: 1px; font-weight: bold;
+            background: rgba(0,0,0,0.65); padding: 10px 18px; border-radius: 999px;
+            font-size: 11px; border: 1px solid rgba(191, 149, 63, 0.4); color: #fbbf24;
+            text-transform: uppercase; letter-spacing: 1.5px; font-weight: bold;
         }
 
-        .input-style { background: rgba(255,255,255,0.05); border: 1px solid rgba(191, 149, 63, 0.3); color: white; border-radius: 15px; padding: 12px; outline: none; width: 100%; }
-        .message-card { animation: slideIn 0.8s ease-out forwards; position: relative; }
-        @keyframes slideIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .input-style { background: rgba(255,255,255,0.06); border: 1px solid rgba(191, 149, 63, 0.35); color: white; border-radius: 16px; padding: 14px; outline: none; width: 100%; transition: all 0.3s; }
+        .input-style:focus { border-color: #fcf6ba; background: rgba(255,255,255,0.12); box-shadow: 0 0 15px rgba(252,246,186,0.3); }
 
-        /* Like Button Pulse */
-        .btn-love { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
-        .btn-love:active { transform: scale(0.8); }
+        .message-card { animation: slideIn 1s ease-out forwards; }
+        @keyframes slideIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+        .btn-love { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .btn-love:active { transform: scale(0.85); }
+
+        #newYearMessage { animation: popIn 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        @keyframes popIn { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        .samson-dedication {
+            position: fixed; bottom: 20px; right: 20px; z-index: 90;
+            color: #bf953f; opacity: 0.8; font-size: 14px; font-style: italic;
+            text-shadow: 0 0 10px rgba(191, 149, 63, 0.6);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -61,128 +71,162 @@
     <div class="scene-indicator" id="currentScene">Mode: Royal Gold ✨</div>
     <div class="stars" id="stars"></div>
 
-    <audio id="bgMusic" loop>
+    <!-- Music before New Year -->
+    <audio id="bgMusic" loop preload="auto">
         <source src="https://files.catbox.moe/pqvart.mp3" type="audio/mpeg">
     </audio>
 
-    <div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
-        <button onclick="sendLove()" class="btn-love glass p-5 rounded-full text-2xl border-red-500/40 shadow-[0_0_20px_rgba(239,68,68,0.3)]">❤️</button>
-        <button onclick="openShareModal()" class="glass p-5 rounded-full text-2xl border-amber-500/40">📤</button>
-        <button id="music-btn" onclick="toggleMusic()" class="hidden glass p-5 rounded-full text-2xl border-amber-500/40">⏸</button>
+    <!-- Special Happy New Year song after midnight -->
+    <audio id="newYearMusic" loop preload="auto">
+        <!-- Your uploaded Happy New Year track -->
+        <source src="https://files.catbox.moe/1yjxlb.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-5">
+        <button onclick="sendLove()" class="btn-love glass p-6 rounded-full text-3xl border-red-500/50 shadow-[0_0_25px_rgba(239,68,68,0.4)]">❤️</button>
+        <button onclick="openShareModal()" class="glass p-6 rounded-full text-3xl border-amber-500/50">🔗</button>
+        <button id="music-btn" onclick="toggleMusic()" class="hidden glass p-6 rounded-full text-3xl border-amber-500/50">⏸</button>
     </div>
 
-    <section class="relative min-h-screen flex items-center justify-center py-12 px-4 z-10">
+    <div class="samson-dedication">
+        Iliyoundwa na upendo mkubwa na Samson – Desemba 2025
+    </div>
+
+    <section class="relative min-h-screen flex items-center justify-center py-16 px-6 z-10">
         <div class="max-w-5xl w-full text-center">
-            <p class="uppercase tracking-[0.7em] text-amber-400 text-[10px] mb-10 font-bold">Tarehe 31 Desemba | Sherehe ya Maisha</p>
-            
-            <div class="mb-14 relative inline-block floating">
-                <div class="absolute -inset-10 bg-amber-500/20 rounded-full blur-3xl opacity-40"></div>
-                <img src="mama.jpg" alt="Vumilia Kajela" class="relative w-64 h-64 md:w-80 md:h-80 object-cover rounded-full border-4 border-amber-500/40 shadow-2xl">
+            <p class="uppercase tracking-[0.8em] text-amber-400 text-xs mb-12 font-bold">Tarehe 31 Desemba | Sherehe ya Maisha</p>
+           
+            <div class="mb-16 relative inline-block floating">
+                <div class="absolute -inset-12 bg-amber-500/25 rounded-full blur-3xl opacity-50"></div>
+                <img src="mama.jpg" alt="Vumilia Kajela" class="relative w-72 h-72 md:w-96 md:h-96 object-cover rounded-full border-4 border-amber-500/50 shadow-2xl">
             </div>
 
-            <h1 class="serif text-5xl md:text-[8rem] mb-8 leading-none">
+            <h1 class="serif text-5xl md:text-[9rem] mb-10 leading-none">
                 <span class="text-white/90">Malkia</span> <br>
                 <span class="gold-gradient font-bold italic">Vumilia Kajela</span>
             </h1>
 
-            <div id="timer" class="flex justify-center gap-4 mb-16">
-                <div class="glass px-6 py-4 rounded-2xl min-w-[90px]">
-                    <span id="days" class="block text-3xl font-bold text-amber-400">00</span>
-                    <span class="text-[10px] uppercase text-gray-400">Siku</span>
+            <div id="newYearMessage" class="hidden mb-12">
+                <h2 class="serif text-5xl md:text-7xl gold-gradient font-bold">HERI YA MWAKA MPYA 2026, MAMA! 🎆✨</h2>
+                <p class="text-amber-200 mt-4 tracking-widest uppercase text-base">Mwaka wa Baraka, Amani na Furaha Isiyo na Mwisho</p>
+            </div>
+
+            <div id="timer" class="flex justify-center gap-6 mb-16 flex-wrap">
+                <div class="glass px-8 py-5 rounded-3xl min-w-[100px]">
+                    <span id="days" class="block text-5xl font-bold text-amber-400">00</span>
+                    <span class="text-xs uppercase text-gray-300">Siku</span>
                 </div>
-                <div class="glass px-6 py-4 rounded-2xl min-w-[90px]">
-                    <span id="hours" class="block text-3xl font-bold text-amber-400">00</span>
-                    <span class="text-[10px] uppercase text-gray-400">Saa</span>
+                <div class="glass px-8 py-5 rounded-3xl min-w-[100px]">
+                    <span id="hours" class="block text-5xl font-bold text-amber-400">00</span>
+                    <span class="text-xs uppercase text-gray-300">Saa</span>
                 </div>
-                <div class="glass px-6 py-4 rounded-2xl min-w-[90px]">
-                    <span id="minutes" class="block text-3xl font-bold text-amber-400">00</span>
-                    <span class="text-[10px] uppercase text-gray-400">Dak</span>
+                <div class="glass px-8 py-5 rounded-3xl min-w-[100px]">
+                    <span id="minutes" class="block text-5xl font-bold text-amber-400">00</span>
+                    <span class="text-xs uppercase text-gray-300">Dakika</span>
                 </div>
             </div>
 
-            <button onclick="startCelebration()" id="startBtn" class="px-12 py-6 border-2 border-amber-500/50 rounded-full hover:bg-amber-600 hover:text-black transition-all font-bold tracking-widest text-xs uppercase">Fungua Zawadi ya Mama 🎁</button>
+            <button onclick="startCelebration()" id="startBtn" class="px-16 py-8 border-2 border-amber-500/60 rounded-full hover:bg-amber-600 hover:text-black transition-all font-bold tracking-widest text-sm uppercase shadow-[0_0_30px_rgba(251,191,36,0.4)]">
+                Fungua Zawadi ya Mama 🎁✨
+            </button>
         </div>
     </section>
 
     <div id="surprise-content" class="hidden">
-        
-        <section class="py-20 px-6 relative z-10">
-            <div class="max-w-4xl mx-auto glass p-10 md:p-20 rounded-[3rem] text-center shadow-2xl border-amber-500/30">
-                <h2 class="serif text-4xl md:text-5xl mb-12 gold-gradient italic font-bold">Heri ya Siku ya Kuzaliwa, Mama! 🎂</h2>
+        <section class="py-24 px-6 relative z-10">
+            <div class="max-w-5xl mx-auto glass p-12 md:p-20 rounded-[3.5rem] text-center shadow-2xl border-amber-500/40" id="dynamicMessageSection">
                 
-                <p class="text-xl md:text-3xl leading-relaxed text-white/95 serif italic mb-12">
-                    "Leo ni siku yako ya kipekee, siku ambayo ulimwengu ulibarikiwa kwa zawadi ya maisha yako. 
-                    Tunasherehekea <span class="text-amber-300">upendo wako, hekima yako, na tabasamu lako</span> 
-                    linaloangaza maisha yetu kila siku. 
-                    <br><br>
-                    Unapohitimu mwaka mwingine leo tarehe 31 Desemba, tunakuombea baraka tele na afya njema. 
-                    Wewe ni <span class="gold-gradient font-bold underline decoration-amber-500/30">Malkia wetu wa thamani</span>. 
-                    Na kisha, saa itakapogonga usiku wa manane, basi mwaka mpya wa 2026 na uanze kwa kishindo cha furaha kwako!"
-                </p>
-                
-                <div class="flex flex-col items-center gap-4">
-                    <p class="text-amber-500 text-xs tracking-widest uppercase font-bold">Tunakupenda Daima,</p>
-                    <p class="serif text-4xl gold-gradient font-bold italic">Familia Yako</p>
+                <div id="birthdayMessage">
+                    <h2 class="serif text-5xl md:text-6xl mb-12 gold-gradient italic font-bold">Heri ya Siku ya Kuzaliwa, Mama! 🎂❤️</h2>
+                    <p class="text-2xl md:text-3xl leading-relaxed text-white/95 serif italic mb-12">
+                        "Leo ni siku yako ya kipekee, siku ambayo ulimwengu ulibarikiwa kwa zawadi ya maisha yako. 
+                        Tunasherehekea <span class="text-amber-300">upendo wako, hekima yako, na tabasamu lako</span> 
+                        linaloangaza maisha yetu kila siku. 
+                        <br><br>
+                        Unapohitimu mwaka mwingine leo tarehe 31 Desemba, tunakuombea baraka tele na afya njema. 
+                        Wewe ni <span class="gold-gradient font-bold underline decoration-amber-500/40">Malkia wetu wa thamani</span>. 
+                        Na kisha, saa itakapogonga usiku wa manane, basi mwaka mpya wa 2026 na uanze kwa kishindo cha furaha kwako!"
+                    </p>
+                    <div class="flex flex-col items-center gap-6 mt-8">
+                        <p class="text-amber-400 text-sm tracking-widest uppercase font-bold">Tunakupenda Daima,</p>
+                        <p class="serif text-5xl gold-gradient font-extrabold italic">Familia Yako</p>
+                    </div>
+                </div>
+
+                <div id="newYearMessageBlock" class="hidden">
+                    <h2 class="serif text-5xl md:text-6xl mb-12 gold-gradient italic font-bold">Heri ya Mwaka Mpya 2026, Mama Yangu Mpendwa! 🎆❤️</h2>
+                    <p class="text-2xl md:text-3xl leading-relaxed text-white/95 serif italic mb-12">
+                        Mama mpendwa, leo hatuadhimishi tu mwanzo wa mwaka mpya — tunamshukuru Mungu kwa baraka ya kuona siku hii pamoja nawe.  
+                        <br><br>
+                        Tunakuombea mwaka huu uwe wa <strong>neema kubwa</strong>, afya kamili, amani ya moyo, furaha isiyo na kikomo, na mafanikio yanayokufuata kila hatua.  
+                        Mungu akuletee miujiza mipya, akufungulie milango ya baraka ambayo haijawahi kufunguliwa, na akuweke katika ulinzi wake wa milele.  
+                        <br><br>
+                        Wewe ni hazina yetu ya thamani zaidi, moyo wa familia, chanzo cha nguvu yetu yote. Asante kwa upendo wako usio na mwisho, kwa hekima yako, na kwa kuwa mama wa ajabu sana.  
+                        Mwaka huu Mungu akubariki mara mia zaidi kuliko ulivyotamani, na akufanyie furaha yako iwe kamili!
+                    </p>
+                    <div class="flex flex-col items-center gap-6 mt-8">
+                        <p class="text-amber-400 text-sm tracking-widest uppercase font-bold">Tunakupenda milele na zaidi,</p>
+                        <p class="serif text-5xl gold-gradient font-extrabold italic">Familia Yako</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 px-6 relative z-10 bg-black/40">
-            <div class="max-w-2xl mx-auto">
-                
+        <section class="py-20 px-6 relative z-10 bg-black/50">
+            <div class="max-w-3xl mx-auto">
                 <div class="grid grid-cols-2 gap-6 mb-12">
-                    <div class="glass p-6 rounded-2xl text-center border-red-500/20">
-                        <div class="text-3xl font-bold text-red-400" id="totalLoves">0</div>
-                        <div class="text-[8px] uppercase tracking-widest text-gray-400">Upendo Jumla (Loves)</div>
+                    <div class="glass p-8 rounded-3xl text-center border-red-500/30">
+                        <div class="text-4xl font-bold text-red-400" id="totalLoves">0</div>
+                        <div class="text-sm uppercase tracking-widest text-gray-300 mt-2">Upendo Jumla</div>
                     </div>
-                    <div class="glass p-6 rounded-2xl text-center border-amber-500/20">
-                        <div class="text-3xl font-bold text-amber-400" id="totalComments">0</div>
-                        <div class="text-[8px] uppercase tracking-widest text-gray-400">Ujumbe wa Baraka</div>
+                    <div class="glass p-8 rounded-3xl text-center border-amber-500/30">
+                        <div class="text-4xl font-bold text-amber-400" id="totalComments">0</div>
+                        <div class="text-sm uppercase tracking-widest text-gray-300 mt-2">Baraka Zilizotumwa</div>
                     </div>
                 </div>
 
-                <div class="text-center mb-12">
-                    <h3 class="serif text-3xl gold-gradient font-bold">Baraka za Ndugu na Rafiki</h3>
-                    <p class="text-gray-400 text-sm italic">Ujumbe wako utabaki hapa milele kwa ajili ya Mama</p>
+                <div class="text-center mb-10">
+                    <h3 class="serif text-4xl gold-gradient font-bold mb-3">Acha Baraka Zako Hapa</h3>
+                    <p class="text-gray-400 text-base italic">Ujumbe wako utabaki milele kwa ajili ya Mama</p>
                 </div>
 
-                <div class="glass p-8 rounded-3xl mb-12">
-                    <div class="space-y-4">
+                <div class="glass p-10 rounded-3xl mb-12">
+                    <div class="space-y-6">
                         <input type="text" id="guestName" placeholder="Jina lako" class="input-style">
-                        <textarea id="guestMsg" placeholder="Andika baraka zako hapa..." class="input-style h-32"></textarea>
+                        <textarea id="guestMsg" placeholder="Andika baraka zako hapa..." class="input-style h-40"></textarea>
                         <select id="guestBadge" class="input-style">
-                            <option value="Familia">👨‍👩‍👧 Familia</option>
+                            <option value="Familia">👨‍👩‍👧‍👦 Familia</option>
                             <option value="VIP">⭐ VIP Guest</option>
-                            <option value="Rafiki">💙 Rafiki</option>
+                            <option value="Rafiki">🤝 Rafiki</option>
                         </select>
-                        <button onclick="addComment()" class="w-full py-4 bg-amber-600 text-black font-black rounded-xl hover:bg-amber-400 transition tracking-widest uppercase text-xs">TUMA BARAKA ❤️</button>
+                        <button onclick="addComment()" class="w-full py-5 bg-amber-600 text-black font-black rounded-2xl hover:bg-amber-500 transition text-base uppercase tracking-widest">Tuma Baraka ❤️</button>
                     </div>
                 </div>
 
-                <div id="commentWall" class="space-y-6">
-                    <div class="text-center text-gray-500 py-10">Inapakia ujumbe wa baraka...</div>
+                <div id="commentWall" class="space-y-8">
+                    <div class="text-center text-gray-500 py-12 text-lg">Inapakia baraka...</div>
                 </div>
             </div>
         </section>
 
-        <footer class="py-10 text-center opacity-30 text-[9px] tracking-widest">
-            &copy; 2026 VUMILIA KAJELA - THE ROYAL BIRTHDAY
+        <footer class="py-12 text-center opacity-40 text-sm tracking-widest">
+            © 2026 VUMILIA KAJELA – Malkia wetu wa thamani | Birthday & New Year Double Celebration
         </footer>
     </div>
 
-    <div id="shareModal" class="hidden fixed inset-0 z-[200] bg-black/95 flex items-center justify-center p-6 backdrop-blur-xl">
-        <div class="glass rounded-[2rem] max-w-md w-full p-10 text-center relative border-amber-500/20">
-            <button onclick="closeShareModal()" class="absolute top-6 right-6 text-2xl text-amber-500">&times;</button>
-            <h3 class="serif text-3xl mb-8 gold-gradient font-bold">Shiriki Furaha</h3>
-            <button onclick="copyLink()" class="w-full py-5 bg-white/5 border border-amber-500/30 rounded-2xl font-bold mb-4">🔗 <span id="copyTxt">Nakili Link ya Ukurasa</span></button>
-            <a href="https://wa.me/?text=Mtembelee%20Malkia%20Vumilia%20Kajela%20katika%20siku%20yake%20ya%20kuzaliwa!" target="_blank" class="block w-full py-5 bg-green-600/20 border border-green-500/30 rounded-2xl font-bold">📱 WhatsApp</a>
+    <div id="shareModal" class="hidden fixed inset-0 z-[200] bg-black/90 flex items-center justify-center p-6 backdrop-blur-xl">
+        <div class="glass rounded-[3rem] max-w-md w-full p-12 text-center relative border-amber-500/30">
+            <button onclick="closeShareModal()" class="absolute top-8 right-8 text-3xl text-amber-400">×</button>
+            <h3 class="serif text-4xl mb-10 gold-gradient font-bold">Shiriki Furaha</h3>
+            <button onclick="copyLink()" class="w-full py-6 bg-white/10 border border-amber-500/40 rounded-2xl font-bold text-lg mb-6">🔗 Nakili Link</button>
+            <a href="https://wa.me/?text=Mtembelee%20Malkia%20Vumilia%20Kajela%20katika%20siku%20yake%20ya%20kuzaliwa%20na%20mwaka%20mpya!" target="_blank" class="block w-full py-6 bg-green-700/30 border border-green-500/40 rounded-2xl font-bold text-lg">WhatsApp</a>
         </div>
     </div>
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getDatabase, ref, push, onValue, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-
+        
         const firebaseConfig = {
             apiKey: "AIzaSyBZTPJ4cVUhx68FilUgrr0d5LdAaf2SvjQ",
             authDomain: "mama2026-5adee.firebaseapp.com",
@@ -198,36 +242,24 @@
         const messagesRef = ref(db, 'messages');
         const likesRef = ref(db, 'likes_count');
 
-        // Send Love function
         window.sendLove = function() {
-            runTransaction(likesRef, (currentValue) => {
-                return (currentValue || 0) + 1;
-            });
-            confetti({
-                particleCount: 15,
-                spread: 30,
-                origin: { x: 0.9, y: 0.9 },
-                colors: ['#ff0000', '#ff69b4'],
-                shapes: ['circle']
-            });
+            runTransaction(likesRef, (currentValue) => (currentValue || 0) + 1);
+            confetti({ particleCount: 20, spread: 40, origin: { x: 0.9, y: 0.9 } });
         };
 
-        // Listen for Likes
         onValue(likesRef, (snapshot) => {
             document.getElementById('totalLoves').innerText = snapshot.val() || 0;
         });
 
         window.addComment = function() {
-            const name = document.getElementById('guestName').value;
-            const msg = document.getElementById('guestMsg').value;
+            const name = document.getElementById('guestName').value.trim();
+            const msg = document.getElementById('guestMsg').value.trim();
             const badge = document.getElementById('guestBadge').value;
             if(name && msg) {
-                push(messagesRef, {
-                    name, message: msg, badge, timestamp: Date.now()
-                }).then(() => {
+                push(messagesRef, { name, message: msg, badge, timestamp: Date.now() }).then(() => {
                     document.getElementById('guestName').value = '';
                     document.getElementById('guestMsg').value = '';
-                    confetti({ particleCount: 100, origin: { y: 0.7 } });
+                    confetti({ particleCount: 120, spread: 90, origin: { y: 0.6 } });
                 });
             }
         };
@@ -240,57 +272,61 @@
                 const msgs = Object.values(data).sort((a,b) => b.timestamp - a.timestamp);
                 msgs.forEach(m => {
                     const div = document.createElement('div');
-                    div.className = "glass p-6 rounded-2xl border-l-4 border-amber-500 message-card mb-4";
+                    div.className = "glass p-8 rounded-3xl border-l-8 border-amber-500 message-card";
                     div.innerHTML = `
-                        <div class="flex items-center gap-2 mb-2">
-                            <p class="text-amber-400 font-bold text-sm">${m.name}</p>
-                            <span class="bg-amber-500/10 text-amber-500 px-2 py-0.5 rounded-full text-[8px] font-bold uppercase border border-amber-500/20">${m.badge}</span>
+                        <div class="flex items-center gap-3 mb-3">
+                            <p class="text-amber-400 font-bold text-lg">${m.name}</p>
+                            <span class="bg-amber-600/20 text-amber-300 px-3 py-1 rounded-full text-xs font-bold uppercase border border-amber-500/30">${m.badge}</span>
                         </div>
-                        <p class="text-gray-300 italic">"${m.message}"</p>
-                    `;
+                        <p class="text-gray-200 italic text-lg">"${m.message}"</p>`;
                     wall.appendChild(div);
                 });
                 document.getElementById('totalComments').innerText = msgs.length;
             } else {
-                wall.innerHTML = '<div class="text-center text-gray-500">Kuwa wa kwanza kutuma baraka!</div>';
+                wall.innerHTML = '<div class="text-center text-gray-500 py-16 text-xl">Kuwa wa kwanza kutuma baraka!</div>';
             }
         });
     </script>
 
     <script>
         const scenes = [
-            { name: "Royal Gold ✨", icons: ['👑', '✨', '💎', '✨'] },
-            { name: "Birthday Joy 🎂", icons: ['🎂', '🎁', '🎈', '✨'] },
-            { name: "Love ❤️", icons: ['❤️', '💖', '🌸', '💖'] }
+            { name: "Royal Gold ✨", icons: ['✨', '🌟', '⚜️', '👑'] },
+            { name: "Birthday Joy 🎂", icons: ['🎂', '🎈', '🎉', '❤️'] },
+            { name: "Love & Celebration ❤️", icons: ['❤️', '💛', '💙', '🌹'] }
         ];
-        
+       
         let currentSceneIndex = 0;
         function createParticle() {
             const p = document.createElement('div');
             p.className = 'festival-particle';
             p.innerText = scenes[currentSceneIndex].icons[Math.floor(Math.random() * 4)];
             p.style.left = Math.random() * 100 + 'vw';
-            p.style.fontSize = (Math.random() * 15 + 15) + 'px';
-            const duration = Math.random() * 3 + 5;
+            p.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            const duration = Math.random() * 4 + 6;
             p.style.animationDuration = duration + 's';
             document.body.appendChild(p);
             setTimeout(() => p.remove(), duration * 1000);
         }
-        setInterval(createParticle, 400);
+        setInterval(createParticle, 300);
 
         function startCelebration() {
-            document.getElementById('bgMusic').play().catch(()=>{});
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(() => console.log("Audio waiting for interaction"));
+           
             document.getElementById('music-btn').classList.remove('hidden');
             document.getElementById('surprise-content').classList.remove('hidden');
             document.getElementById('startBtn').style.display = 'none';
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
+           
+            confetti({ particleCount: 200, spread: 80, origin: { y: 0.6 } });
             window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+            startFestivalFall();
         }
 
         function toggleMusic() {
             const m = document.getElementById('bgMusic');
-            if(m.paused) { m.play(); document.getElementById('music-btn').innerText = "⏸"; }
-            else { m.pause(); document.getElementById('music-btn').innerText = "▶️"; }
+            const btn = document.getElementById('music-btn');
+            if(m.paused) { m.play(); btn.innerText = "⏸"; }
+            else { m.pause(); btn.innerText = "▶️"; }
         }
 
         function openShareModal() { document.getElementById('shareModal').classList.remove('hidden'); }
@@ -298,27 +334,137 @@
         function copyLink() {
             navigator.clipboard.writeText(window.location.href);
             document.getElementById('copyTxt').innerText = "✓ Imenakiliwa!";
-            setTimeout(()=> document.getElementById('copyTxt').innerText = "Nakili Link ya Ukurasa", 2000);
+            setTimeout(() => document.getElementById('copyTxt').innerText = "Nakili Link ya Ukurasa", 2000);
+        }
+
+        function startFestivalFall() {
+            const snowflake = confetti.shapeFromText({ text: '❄️', scalar: 1.5 });
+            const flower1   = confetti.shapeFromText({ text: '🌸', scalar: 1.8 });
+            const flower2   = confetti.shapeFromText({ text: '🌺', scalar: 1.6 });
+            const star1     = confetti.shapeFromText({ text: '✨', scalar: 1.4 });
+            const star2     = confetti.shapeFromText({ text: '🌟', scalar: 1.3 });
+            const crown     = confetti.shapeFromText({ text: '👑', scalar: 1.4 });
+
+            const fallBase = {
+                particleCount: 3,
+                angle: 90,
+                spread: 60,
+                startVelocity: 0.7,
+                decay: 0.94,
+                gravity: 0.22,
+                drift: 3.5,
+                ticks: 900,
+                flat: true,
+                shapes: [snowflake, flower1, flower2, star1, star2, crown, 'circle']
+            };
+
+            const colors = ['#ffffff', '#fff5e6', '#ffe4e1', '#fdfd96', '#ffd700', '#ffcc99', '#ff99cc'];
+
+            setInterval(() => {
+                confetti({
+                    ...fallBase,
+                    origin: { x: Math.random() * 0.35, y: -0.1 },
+                    particleCount: 2 + Math.floor(Math.random() * 3),
+                    colors
+                });
+            }, 350);
+
+            setInterval(() => {
+                confetti({
+                    ...fallBase,
+                    origin: { x: 0.65 + Math.random() * 0.35, y: -0.1 },
+                    particleCount: 2 + Math.floor(Math.random() * 3),
+                    colors
+                });
+            }, 400);
+
+            setInterval(() => {
+                if (Math.random() < 0.25) {
+                    confetti({
+                        particleCount: 80,
+                        spread: 100,
+                        startVelocity: 25,
+                        origin: { y: 0.9 },
+                        colors: ['#ff0000', '#ffd700', '#00ff88', '#ff69b4', '#ffffff']
+                    });
+                }
+            }, 1800);
         }
 
         const target = new Date("January 1, 2026 00:00:00").getTime();
+        let nyTriggered = false;
+
         setInterval(() => {
-            const d = target - new Date().getTime();
-            if(d<0) return;
-            document.getElementById('days').innerText = String(Math.floor(d/86400000)).padStart(2,'0');
-            document.getElementById('hours').innerText = String(Math.floor((d%86400000)/3600000)).padStart(2,'0');
-            document.getElementById('minutes').innerText = String(Math.floor((d%3600000)/60000)).padStart(2,'0');
+            const now = new Date().getTime();
+            const d = target - now;
+
+            if(d <= 0) {
+                document.getElementById('timer').classList.add('hidden');
+                document.getElementById('newYearMessage').classList.remove('hidden');
+                document.getElementById('currentScene').innerText = "Mode: Heri ya Mwaka Mpya 2026 🎆👑";
+
+                document.getElementById('birthdayMessage').classList.add('hidden');
+                const nyBlock = document.getElementById('newYearMessageBlock');
+                nyBlock.classList.remove('hidden');
+                nyBlock.style.opacity = '0';
+                setTimeout(() => { nyBlock.style.transition = 'opacity 2s'; nyBlock.style.opacity = '1'; }, 100);
+
+                // Pause old music
+                document.getElementById('bgMusic').pause();
+
+                // Play special Happy New Year song
+                const nyAudio = document.getElementById('newYearMusic');
+                nyAudio.volume = 0.7;
+                nyAudio.play().catch(e => console.log("New Year music needs user interaction:", e));
+
+                if(!nyTriggered) {
+                    launchNewYearFireworks();
+                    nyTriggered = true;
+                }
+            } else {
+                document.getElementById('days').innerText = String(Math.floor(d/86400000)).padStart(2,'0');
+                document.getElementById('hours').innerText = String(Math.floor((d%86400000)/3600000)).padStart(2,'0');
+                document.getElementById('minutes').innerText = String(Math.floor((d%3600000)/60000)).padStart(2,'0');
+            }
         }, 1000);
 
-        const stars = document.getElementById('stars');
-        for (let i = 0; i < 80; i++) {
+        function launchNewYearFireworks() {
+            const duration = 30 * 1000;
+            const animationEnd = Date.now() + duration;
+            const defaults = { startVelocity: 40, spread: 120, ticks: 100, zIndex: 0 };
+
+            function randomInRange(min, max) { return Math.random() * (max - min) + min; }
+
+            const interval = setInterval(() => {
+                const timeLeft = animationEnd - Date.now();
+                if (timeLeft <= 0) return clearInterval(interval);
+
+                const particleCount = Math.floor(60 * (timeLeft / duration));
+
+                confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.4), y: Math.random() - 0.2 } });
+                confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.6, 0.9), y: Math.random() - 0.2 } });
+
+                if (Math.random() < 0.12) {
+                    confetti({
+                        particleCount: 180,
+                        spread: 140,
+                        origin: { y: 0.6 },
+                        colors: ['#ff0000', '#ffd700', '#00ff88', '#ff69b4', '#ffffff', '#00ffff', '#ffcc00']
+                    });
+                }
+            }, 160);
+        }
+
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 180; i++) {
             const s = document.createElement('div');
             s.className = 'star';
-            s.style.width = '2px'; s.style.height = '2px';
+            const size = Math.random() * 3 + 1 + 'px';
+            s.style.width = size; s.style.height = size;
             s.style.left = Math.random() * 100 + '%';
             s.style.top = Math.random() * 100 + '%';
-            s.style.animationDelay = Math.random() * 3 + 's';
-            stars.appendChild(s);
+            s.style.animationDelay = Math.random() * 5 + 's';
+            starsContainer.appendChild(s);
         }
     </script>
 </body>
